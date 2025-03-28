@@ -1,0 +1,9 @@
+- name: Configure EC2 Instance
+  hosts: webserver
+  become: yes
+  tasks:
+    - name: Update and install packages
+      apt:
+        update_cache: yes
+        name: ["git", "vim"]
+        state: present
